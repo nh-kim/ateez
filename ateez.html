@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 웹사이트</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: white;
+            font-family: '맑은 고딕', sans-serif;
+        }
+        nav {
+           background-color: #000;
+           padding: 10px;
+       }
+       nav a {
+           color: white;
+           text-decoration: none;
+           padding: 5px 10px;
+           margin-right: 5px;
+       }
+       nav a:hover {
+           color: black;
+           background-color: white;
+           border-radius: 15px;
+       }
+       .active {
+           color: black;
+           background-color: #FFF;
+           border-radius: 15px;
+       }        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      .active { color: Black; background-color: #FFF; border-radius: 15px; }
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            max-width: 1200px;
+            height: 780px;
+        }
+        .image-container {
+            width: 400px;
+            height: 400px;
+            position: fixed;
+            top: 50%;
+            right: 100px;
+            transform: translateY(-50%);
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            transition: border-radius 0.3s ease;
+        }
+        .image-container a:hover img {
+            border-radius: 50%;
+        }
+        .text-container {
+            flex-grow: 1;
+            max-width: 500px;
+            padding: 20px;
+            text-align: left;
+            position: relative;
+        }
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .lyrics-container {
+            width: 700px;
+            height: 500px;
+            overflow-y: scroll;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-right: 20px;
+            margin-left: -100px; /* 더 왼쪽으로 이동 */
+        }
+        .lyrics-container::-webkit-scrollbar {
+            display: none;
+        }
+        .description span, .album-description p {
+            font-size: 16px;
+            line-height: 2; /* 행간 조정 */
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        .description span {
+            display: block;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: calc(var(--order) * 0.2s);
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        .option {
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .album-description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            z-index: 1;
+            transition: transform 0.3s ease;
+            transform: translateY(-100%);
+        }
+        .album-description.show {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+        <nav>
+       <a href="all.html" class="active">all</a>
+        <a href="Newjins.html">Newjins</a>
+        <a href="Aespa.html">Aespa</a>
+        <a href="Ive.html">Ive</a>
+        <a href="Ateez.html">Ateez</a>
+        <a href="Tws.html">Tws</a>
+    </nav>
+    <div class="album-description">
+        <p>에이티즈 - WORK</p>
+        <p>2024년 5월 31일에 발매된 에이티즈의 미니 10집이다.</p>
+        <p>[Golden Hour]는 그들의 아름다운 이야기를 시작한다. WORK는 꿈을 현실로 이루어 가는 중. 사람들의 걱정은 찬사로, 질투는 불안으로 바꾸어 가며 그렇게 우리에게 집중하며 앞을 향해 나아가고 있다. 끊임없는 노력과 도전을 멈추지 않는 ATEEZ(에이티즈)의 모습을 직관적으로 표현한 곡이다.
+</p>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="lyrics-container">
+                <div class="title">WORK</div>
+                <div class="subtitle">에이티즈</div>
+                <div class="description">
+                    <span style="--order: 1;">Gotta WORK</span>
+                    <span style="--order: 2;">Gotta make that money make purse</span>
+                    <span style="--order: 3;">Gotta fur coat so I make it purr</span>
+                    <span style="--order: 4;">Give ‘em whip lash when they see me earn</span>
+                    <span style="--order: 5;">Gotta gotta gotta WORK</span>
+                    <span style="--order: 6;">Gotta make that money make purse</span>
+                    <span style="--order: 7;">Gotta fur coat so I make it purr</span>
+                    <span style="--order: 8;">Gotta get that credit get perks</span>
+                    <span style="--order: 9;">Gotta gotta gotta WORK</span>
+                    <span style="--order: 10;">눈 뜨면 착착 준비되는 Golden plate</span>
+                    <span style="--order: 11;">이제 막 도착 LA to Tokyo</span>
+                    <span style="--order: 12;">시차에 맞게 고른 시계 Classic type</span>
+                    <span style="--order: 13;">내가 움직이면 뒤따르지 Guardians</span>
+                    <span style="--order: 14;">어디를 가도 튀어나와 Breaking News</span>
+                    <span style="--order: 15;">하루 종일 내 노래가 나와 Radio</span>
+                    <span style="--order: 16;">그녀들은 춤을 추네 Flamingo</span>
+                    <span style="--order: 17;">허나 내 시간은 금이라서 Adios</span>
+                    <span style="--order: 18;">Ganso que pone huevos de oro</span>
+                    <span style="--order: 19;">24시간 탑을 쌓는 중</span>
+                    <span style="--order: 20;">관심 없지 난 친목 도모는</span>
+                    <span style="--order: 21;">No no no no no</span>
+                    <span style="--order: 22;">Gotta WORK</span>
+                    <span style="--order: 23;">Gotta make that money make purse</span>
+                    <span style="--order: 24;">Gotta fur coat so I make it purr</span>
+                    <span style="--order: 25;">Give ‘em whip lash when they see me earn</span>
+                    <span style="--order: 26;">Gotta gotta gotta WORK</span>
+                    <span style="--order: 27;">Gotta make that money makepurse</span>
+                    <span style="--order: 28;">Gotta fur coat so I make it purr</span>
+                    <span style="--order: 29;">Gotta get that credit get perks</span>
+                    <span style="--order: 30;">Gotta gotta gotta WORK</span>
+                    <span style="--order: 31;">Gotta make that money make purse</span>
+                    <span style="--order: 32;">빠라바라밤 달려 씽씽</span>
+                    <span style="--order: 33;">가자 직진 죄다 마셔 Fresh air</span>
+                    <span style="--order: 34;">온몸에 빛이 눈이 부셔 Gee gee</span>
+                    <span style="--order: 35;">딱 봐라 딴따라는 멋 따라 ㄱㄱ</span>
+                    <span style="--order: 36;">아는 형에 사돈에 팔촌까지</span>
+                    <span style="--order: 37;">돌고 돌면 지구촌 한 가족임</span>
+                    <span style="--order: 38;">나는 괜찮아 그냥 지나가요</span>
+                    <span style="--order: 39;">우리 비행기는 이미 지정석임</span>
+                    <span style="--order: 40;">Yeah purr 떨려 이건 마치 제트기</span>
+                    <span style="--order: 41;">Uh 하늘에서 뿌려 버려 시즈닝 (Stack, stack)</span>
+                    <span style="--order: 42;">My clock ticks on a different beat,</span>
+                    <span style="--order: 43;">chasing that dough?</span>
+                    <span style="--order: 45;">Wow ride with me</span>
+                    <span style="--order: 46;">Ganso que pone huevos de oro</span>
+                    <span style="--order: 47;">24시간 탑을 쌓는 중</span>
+                    <span style="--order: 48;">관심 없지 난 친목 도모는</span>
+                    <span style="--order: 49;">No no no no no</span>
+                    <span style="--order: 50;">Gotta WORK</span>
+                    <span style="--order: 51;">Gotta make that money make purse</span>
+                    <span style="--order: 52;">Gotta fur coat so I make it purr</span>
+                    <span style="--order: 53;">Give ‘em whip lash when they see me earn</span>
+                    <span style="--order: 54;">Gotta gotta gotta WORK</span>
+                    <span style="--order: 55;">Gotta make that money make purse</span>
+                    <span style="--order: 56;">Gotta fur coat so I make it purr</span>
+                    <span style="--order: 57;">Gotta get that credit get perks</span>
+                    <span style="--order: 58;">Gotta gotta gotta WORK</span>
+                    <span style="--order: 59;">Clock tic tac toe 서둘러</span>
+                    <span style="--order: 60;">지금 바빠 넌 좀 빠져줘</span>
+                    <span style="--order: 61;">우리는 지금 하늘 저 위로</span>
+                    <span style="--order: 62;">You can’t find me where I stand</span>
+                    <span style="--order: 63;">Gotta make that money make purse</span>
+                    <span style="--order: 64;">Money make purse</span>
+                    <span style="--order: 65;">Gotta make that money make purse</span>
+                    <span style="--order: 66;">Money make purse</span>
+                    <span style="--order: 67;">Gotta make that money make</span>
+                </div>
+            </div>
+            <div class="image-container">
+                <a href="https://youtu.be/VGnOpZhsPk4?si=eqhmfxTax1hbkN22" target="_blank">
+                    <img src="https://i.imgur.com/9b3FvxA.jpeg" alt="이미지">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const albumDescription = document.querySelector('.album-description');
+        const container = document.querySelector('.container');
+
+        container.addEventListener('click', () => {
+            albumDescription.classList.toggle('show');
+        });
+
+        container.addEventListener('scroll', () => {
+            albumDescription.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
